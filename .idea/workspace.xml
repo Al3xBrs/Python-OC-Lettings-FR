@@ -5,11 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2e6a6eea-644e-44b2-934a-2ce4b370dc0d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Python-OC-Lettings-FR.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/letting/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/letting/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/letting/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/letting/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oc-lettings-site.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/oc-lettings-site.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oc_lettings_site/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/oc_lettings_site/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oc_lettings_site/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/oc_lettings_site/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oc_lettings_site/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/oc_lettings_site/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oc_lettings_site/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/oc_lettings_site/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oc_lettings_site/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/oc_lettings_site/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profiles/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/profiles/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profiles/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/profiles/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,9 +42,9 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "create__othrs__apps",
+    "git-widget-placeholder": "migrate",
     "last_opened_file_path": "/Users/alex/Documents/Openclassrooms/Projets/Projet_13/OC_Lettings/Python-OC-Lettings-FR",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+    "settings.editor.selected.configurable": "com.jetbrains.python.black.configuration.BlackFormatterConfigurable"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
