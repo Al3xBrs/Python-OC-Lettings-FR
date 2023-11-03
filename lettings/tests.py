@@ -5,7 +5,7 @@ from django.urls import reverse
 
 class CreateTestCase(TestCase):
     def setUp(self):
-        address_test = Address.objects.create(
+        self.address_test = Address.objects.create(
             number=999,
             street="Rue Du Python",
             city="Saint Python lès Dax",
@@ -13,25 +13,28 @@ class CreateTestCase(TestCase):
             zip_code=40999,
             country_iso_code="FRA",
         )
-        Letting.objects.create(
+        self.letting_test = Letting.objects.create(
             title="Python HOUSE",
-            address=address_test,
+            address=self.address_test,
         )
 
     def test_create_address(self):
-        address_test = Address.objects.get(street="Rue Du Python")
-        self.assertEqual(address_test.number, 999)
-        self.assertEqual(address_test.street, "Rue Du Python")
-        self.assertEqual(address_test.city, "Saint Python lès Dax")
-        self.assertEqual(address_test.state, "NA")
-        self.assertEqual(address_test.zip_code, 40999)
-        self.assertEqual(address_test.country_iso_code, "FRA")
+        self.assertEqual(self.address_test.number, 999)
+        self.assertEqual(self.address_test.street, "Rue Du Python")
+        self.assertEqual(self.address_test.city, "Saint Python lès Dax")
+        self.assertEqual(self.address_test.state, "NA")
+        self.assertEqual(self.address_test.zip_code, 40999)
+        self.assertEqual(self.address_test.country_iso_code, "FRA")
+
+    def test_return_address_str(self):
+        self.assertEqual(str(self.address_test), "999 Rue Du Python")
 
     def test_create_letting(self):
-        address_test = Address.objects.get(street="Rue Du Python")
-        letting_test = Letting.objects.get(title="Python HOUSE")
-        self.assertEqual(letting_test.title, "Python HOUSE")
-        self.assertEqual(letting_test.address, address_test)
+        self.assertEqual(self.letting_test.title, "Python HOUSE")
+        self.assertEqual(self.letting_test.address, self.address_test)
+
+    def test_return_letting_str(self):
+        self.assertEqual(str(self.letting_test), "Python HOUSE")
 
 
 class ViewsTestCase(TestCase):
@@ -50,7 +53,6 @@ class ViewsTestCase(TestCase):
         )
 
     def test_lettings_index_response(self):
-        lettings_list = Letting.objects.all()
         url = reverse("lettings_index")
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
