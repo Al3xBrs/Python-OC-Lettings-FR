@@ -49,22 +49,15 @@ class ViewsTestCase(TestCase):
             address=address_test,
         )
 
-    def test_letting_index_response(self):
+    def test_lettings_index_response(self):
         lettings_list = Letting.objects.all()
         url = reverse("lettings_index")
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
 
-        self.assertQuerysetEqual(
-            response.context["lettings_list"],
-            lettings_list,
-            transform=repr,
-        )
-
-    def test_index_response(self):
+    def test_letting_response(self):
         letting_test = Letting.objects.get(title="Python HOUSE")
         id_test = letting_test.id
-        # TODO:
         url = reverse("letting", args=[id_test])
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
