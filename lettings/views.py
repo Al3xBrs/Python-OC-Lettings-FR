@@ -6,6 +6,11 @@ from lettings.models import Letting
 # massa. Integer est nunc, pulvinar a tempor et, bibendum id arcu. Vestibulum ante ipsum primis
 # in faucibus orci luctus et ultrices posuere cubilia curae; Cras eget scelerisque
 def index(request):
+    """
+    Display lettings index page.
+    :param request:
+    :return: render request for the lettings_index page with all lettings list.
+    """
     lettings_list = Letting.objects.all()
     context = {"lettings_list": lettings_list}
     return render(request, "lettings/index.html", context)
@@ -21,9 +26,15 @@ def index(request):
 # eget bibendum lorem. Sed non dolor risus. Mauris condimentum auctor elementum. Donec quis nisi
 # ligula. Integer vehicula tincidunt enim, ac lacinia augue pulvinar sit amet.
 def letting(request, letting_id):
-    letting = Letting.objects.get(id=letting_id)
+    """
+    Display letting page.
+    :param request:
+    :param letting_id: letting id from the previous section.
+    :return: render request for the letting page.
+    """
+    c_letting = Letting.objects.get(id=letting_id)
     context = {
-        "title": letting.title,
-        "address": letting.address,
+        "title": c_letting.title,
+        "address": c_letting.address,
     }
     return render(request, "lettings/letting.html", context)
