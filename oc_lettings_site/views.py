@@ -13,4 +13,4 @@ def index(request):
     :param request:
     :return: request with the index template. (Welcome page)
     """
-    return render(request, "index.html")
+    return render(request, "site/index.html")
