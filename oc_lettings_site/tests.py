@@ -10,7 +10,14 @@ def test_dummy():
 
 
 class UrlTestCase(TestCase):
+    """
+    Test each url code 200.
+    """
+
     def setUp(self):
+        """
+        Set up Address, Letting and Profile.
+        """
         self.address_test = Address.objects.create(
             number=999,
             street="Rue Du Python",
@@ -28,6 +35,9 @@ class UrlTestCase(TestCase):
         self.profile_test = Profile.objects.create(user=self.user, favorite_city="TEST")
 
     def test_index(self):
+        """
+        Test each url, assert equal status code = 200
+        """
         urls = [
             reverse("index"),
             reverse("lettings_index"),

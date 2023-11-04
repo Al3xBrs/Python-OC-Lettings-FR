@@ -8,4 +8,9 @@ from django.shortcuts import render
 # vitae erat ac orci placerat luctus. Nullam elementum urna nisi, pellentesque iaculis enim
 # cursus in. Praesent volutpat porttitor magna, non finibus neque cursus id.
 def index(request):
+    """
+    Display the Welcome page.
+    :param request:
+    :return: request with the index template. (Welcome page)
+    """
     return render(request, "index.html")
