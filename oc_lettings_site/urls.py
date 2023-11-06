@@ -5,6 +5,7 @@ from profiles import views as pviews
 from lettings import views as lviews
 from .views import index
 
+
 urlpatterns = [
     # Index url is the welcome page at 127.0.0.1/
     path("", index, name="index"),

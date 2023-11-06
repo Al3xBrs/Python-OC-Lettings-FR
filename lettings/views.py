@@ -1,3 +1,5 @@
+import logging
+
 from django.shortcuts import render
 from lettings.models import Letting
 
@@ -11,9 +13,14 @@ def index(request):
     :param request:
     :return: render request for the lettings_index page with all lettings list.
     """
-    lettings_list = Letting.objects.all()
-    context = {"lettings_list": lettings_list}
-    return render(request, "lettings/index.html", context)
+    try:
+        lettings_list = Letting.objects.all()
+        context = {"lettings_list": lettings_list}
+        return render(request, "lettings/index.html", context)
+    except:
+        context = {"profile": "No lettings list"}
+        logging.error("No lettings list")
+        return render(request, "500.html", context)
 
 
 # Cras ultricies dignissim purus, vitae hendrerit ex varius non. In accumsan porta nisl id
@@ -32,9 +39,14 @@ def letting(request, letting_id):
     :param letting_id: letting id from the previous section.
     :return: render request for the letting page.
     """
-    c_letting = Letting.objects.get(id=letting_id)
-    context = {
-        "title": c_letting.title,
-        "address": c_letting.address,
-    }
-    return render(request, "lettings/letting.html", context)
+    try:
+        c_letting = Letting.objects.get(id=letting_id)
+        context = {
+            "title": c_letting.title,
+            "address": c_letting.address,
+        }
+        return render(request, "lettings/letting.html", context)
+    except:
+        logging.error(f"Can't find '{letting_id}' letting")
+        context = {"profile": letting_id}
+        return render(request, "500.html", context)
