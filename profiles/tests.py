@@ -58,3 +58,16 @@ class ViewsTestCase(TestCase):
         url = reverse("profile", args=[username_profile])
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
+
+    def test_should_return_404(self):
+        url = "profile"
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "Error 404")
+
+    def test_should_return_500(self):
+        non_existent_profile = "TESTTEST"
+        url = reverse("profile", args=[non_existent_profile])
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "Error 500")

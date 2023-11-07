@@ -95,3 +95,17 @@ class ViewsTestCase(TestCase):
         url = reverse("letting", args=[id_test])
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
+
+    def test_return_404(self):
+        url = "letting"
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
+
+        self.assertContains(response, "Error 404")
+
+    def test_return_500(self):
+        non_existent_letting_id = 999
+        url = reverse("letting", args=[non_existent_letting_id])
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "Error 500")

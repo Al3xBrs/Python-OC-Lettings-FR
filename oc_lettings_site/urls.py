@@ -1,11 +1,18 @@
 from django.contrib import admin
 from django.urls import path
-
+import sentry_sdk
+from django.views.generic import TemplateView
 from profiles import views as pviews
 from lettings import views as lviews
-from .views import index
+from .views import index, sentry_
 
 
+def custom_404(request, exception):
+    sentry_sdk.capture_exception(exception)
+    return TemplateView.as_view(template_name="404.html")(request)
+
+
+handler404 = custom_404
 urlpatterns = [
     # Index url is the welcome page at 127.0.0.1/
     path("", index, name="index"),
@@ -19,4 +26,6 @@ urlpatterns = [
     path("profiles/<str:username>/", pviews.profile, name="profile"),
     # Admin URL.
     path("admin/", admin.site.urls),
+    # Sentry debug
+    path("sentry-debug/", sentry_),
 ]

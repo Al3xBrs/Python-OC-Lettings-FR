@@ -17,7 +17,7 @@ def index(request):
         lettings_list = Letting.objects.all()
         context = {"lettings_list": lettings_list}
         return render(request, "lettings/index.html", context)
-    except:
+    except Letting.DoesNotExist:
         context = {"profile": "No lettings list"}
         logging.error("No lettings list")
         return render(request, "500.html", context)
@@ -46,7 +46,7 @@ def letting(request, letting_id):
             "address": c_letting.address,
         }
         return render(request, "lettings/letting.html", context)
-    except:
+    except Letting.DoesNotExist:
         logging.error(f"Can't find '{letting_id}' letting")
         context = {"profile": letting_id}
         return render(request, "500.html", context)

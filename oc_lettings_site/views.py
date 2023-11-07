@@ -14,3 +14,8 @@ def index(request):
     :return: request with the index template. (Welcome page)
     """
     return render(request, "site/index.html")
+
+
+def sentry_():
+    division_by_zero = 1 / 0
+    return division_by_zero

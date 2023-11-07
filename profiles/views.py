@@ -16,9 +16,8 @@ def index(request):
         profiles_list = Profile.objects.all()
         context = {"profiles_list": profiles_list}
         return render(request, "profiles/index.html", context)
-    except:
-        logging.error("No profiles list")
-        logging.info("No profiles list found at profiles.views.index")
+    except Profile.DoesNotExist:
+        logging.error("No profiles list found at profiles.views.index")
         context = {"profile": "profiles list"}
         return render(request, "500.html", context)
 
@@ -35,11 +34,10 @@ def profile(request, username):
     :return: request template profile with context.
     """
     try:
-        profile = Profile.objects.get(user__username=username)
-        context = {"profile": profile}
+        c_profile = Profile.objects.get(user__username=username)
+        context = {"profile": c_profile}
         return render(request, "profiles/profile.html", context)
-    except:
-        logging.error(f"No profile {username}")
-        logging.info(f"No profile {username} found in profiles.views.profile")
+    except Profile.DoesNotExist:
+        logging.error(f"No profile {username} found in profiles.views.profile")
         context = {"profile": username}
         return render(request, "500.html", context)
