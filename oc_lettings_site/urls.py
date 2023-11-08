@@ -26,6 +26,6 @@ urlpatterns = [
     path("profiles/<str:username>/", pviews.profile, name="profile"),
     # Admin URL.
     path("admin/", admin.site.urls),
-    # Sentry debug
+    # Sentry debug.
     path("sentry-debug/", sentry_),
 ]
