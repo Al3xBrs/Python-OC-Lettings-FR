@@ -1,7 +1,3 @@
-databases:
-  - name: oc-lettings-site
-    databaseName: oc-lettings-site
-    user: postgres
 
 services:
   - type: web
