@@ -3,6 +3,7 @@
     * Copyright 2013-2021 Start Bootstrap
     * Licensed under SEE_LICENSE (https://github.com/BlackrockDigital/sb-ui-kit-pro/blob/master/LICENSE)
     */
+
     window.addEventListener('DOMContentLoaded', event => {
     // Activate feather
     feather.replace();

@@ -5,6 +5,7 @@ from django.views.generic import TemplateView
 from profiles import views as pviews
 from lettings import views as lviews
 from .views import index, sentry_
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 
 def custom_404(request, exception):
@@ -29,3 +30,4 @@ urlpatterns = [
     # Sentry debug.
     path("sentry-debug/", sentry_),
 ]
+urlpatterns += staticfiles_urlpatterns()
