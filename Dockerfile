@@ -1,5 +1,4 @@
 FROM python:3.11-alpine
-FROM --platform=linux/amd64 al3xbrs/oc_lettings_site
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 COPY requirements.txt .
