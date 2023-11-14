@@ -16,6 +16,6 @@ def index(request):
     return render(request, "site/index.html")
 
 
-def sentry_():
+def sentry_(*args, **kwargs):
     division_by_zero = 1 / 0
     return division_by_zero

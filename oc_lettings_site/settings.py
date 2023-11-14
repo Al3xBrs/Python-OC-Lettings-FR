@@ -16,7 +16,7 @@ SECRET_KEY = f"{os.environ.get('SECRET_KEY')}"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = "RENDER" not in os.environ
 
-ALLOWED_HOSTS = ["localhost"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
 if RENDER_EXTERNAL_HOSTNAME:
@@ -126,9 +126,10 @@ if not DEBUG:
 
 # Sentry config
 
-DSN = os.environ.get("DSN")
+SENTRY_DSN = os.environ.get("SENTRY_DSN")
 sentry_sdk.init(
-    dsn=DSN,
+    dsn=SENTRY_DSN,
+    enable_tracing=True,
     # Set traces_sample_rate to 1.0 to capture 100%
     # of transactions for performance monitoring.
     traces_sample_rate=1.0,
