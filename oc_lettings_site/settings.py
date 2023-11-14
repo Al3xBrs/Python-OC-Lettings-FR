@@ -2,6 +2,7 @@ import os
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
 from pathlib import Path
+from dotenv import dotenv_values
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -11,7 +12,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = f"{os.environ.get('SECRET_KEY')}"
+config = dotenv_values(".env")
+
+SECRET_KEY = f"{config.get('SECRET_KEY')}"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = "RENDER" not in os.environ
@@ -126,7 +129,7 @@ if not DEBUG:
 
 # Sentry config
 
-SENTRY_DSN = os.environ.get("SENTRY_DSN")
+SENTRY_DSN = config.get("SENTRY_DSN")
 sentry_sdk.init(
     dsn=SENTRY_DSN,
     enable_tracing=True,
