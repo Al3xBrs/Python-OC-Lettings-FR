@@ -1,0 +1,3 @@
+[run]
+source = lettings, oc_lettings_site, profiles
+omit = *tests.py, */migrations/*, *__init__.py
