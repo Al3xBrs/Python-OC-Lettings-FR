@@ -22,10 +22,15 @@ jobs:
 
   build:
     docker:
-      - image: al3xbrs/oc_lettings_site:latest
+      - image: circleci/python:3.8
 
     steps:
       - checkout
+      - run:
+          name: Install Docker
+          command: |
+            sudo apt-get update
+            sudo apt-get install -y docker-ce-cli
 
       # Image Docker
       - run:
