@@ -40,14 +40,17 @@ jobs:
             docker push al3xbrs/oc_lettings_site:latest
 
   deploy:
-    executor: python/default
-    steps:
-      - env:
-          hook_url: ${{ os.environ.get("HOOK_URL") }}
-      - run:
-          name: Deploy on Render
-          command: |
-            curl "$hook_url"
+      docker:
+        - image: circleci/python:3.8
+
+      steps:
+        - checkout
+
+        - run:
+            name: Deploy on Render
+            command: |
+              curl -X POST -d {} "$HOOK_URL"
+
 
 
 workflows:
