@@ -22,7 +22,7 @@ jobs:
 
   build:
     docker:
-      - image: circleci/python3.11.1
+      - image: al3xbrs/oc_lettings_site:latest
 
     steps:
       - checkout
@@ -41,7 +41,7 @@ jobs:
 
   deploy:
       docker:
-        - image: circleci/python:3.8
+        - image: al3xbrs/oc_lettings_site:latest
 
       steps:
         - checkout
