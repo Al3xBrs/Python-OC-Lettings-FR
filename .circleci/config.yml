@@ -22,10 +22,13 @@ jobs:
 
   build:
     docker:
-      - image: circleci/python:3.8
-
+      - image: circleci/python:3.11-rc-browsers-legacy
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
     steps:
       - checkout
+      - setup_remote_docker
 
       # Image Docker
       - run:
@@ -40,16 +43,15 @@ jobs:
             docker push al3xbrs/oc_lettings_site:latest
 
   deploy:
-      docker:
-        - image: al3xbrs/oc_lettings_site:latest
+    docker:
+      - image: circleci/python:3.11-rc-browsers-legacy
 
-      steps:
-        - checkout
-
-        - run:
-            name: Deploy on Render
-            command: |
-              curl -X POST -d {} "$HOOK_URL"
+    steps:
+      - checkout
+      - run:
+          name: Deploy on Render
+          command: |
+            curl -X POST -d {} "$HOOK_URL"
 
 
 
