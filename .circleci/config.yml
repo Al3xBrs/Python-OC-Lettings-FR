@@ -33,7 +33,7 @@ jobs:
           command: |
             docker build -t al3xbrs/oc_lettings_site:latest .
 
-      # Push Docker on Docker Hub
+      # Push Docker on Docker Hub.
       - run:
           name: Push Docker Image to Docker Hub
           command: |
