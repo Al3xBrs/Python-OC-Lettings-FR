@@ -2,8 +2,8 @@
 # See: https://circleci.com/docs/configuration-reference
 version: 2.1
 
-orbs:
-  python: circleci/python@2.0.3
+#orbs:
+#  python: circleci/python@2.0.3
 
 jobs:
   test:
