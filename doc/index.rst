@@ -15,12 +15,22 @@ Welcome to Al3xBrs-OC-Lettings's documentation!
 Indices and tables
 ==================
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+* :ref:`Description`
+* :ref:`Instruction`
+* :ref:`Quick Start`
 
 
 Description
+===========
+
+A test, *a test*, **a test**
+
+Instruction
+===========
+
+A test, *a test*, **a test**
+
+Quick Start
 ===========
 
 A test, *a test*, **a test**
