@@ -18,6 +18,10 @@ Indices and tables
 * :ref:`Description`
 * :ref:`Instruction`
 * :ref:`Quick Start`
+* :ref:`Technologies and languages`
+* :ref:`Interfaces`
+* :ref:`How to use`
+* :ref:`Deploy and gesture`
 
 
 .. _Description:
@@ -51,7 +55,7 @@ Structure and Database
 A test, *a test*, **a test**
 
 .. _Interfaces:
-Interface
+Interfaces
 =========
 
 A test, *a test*, **a test**
