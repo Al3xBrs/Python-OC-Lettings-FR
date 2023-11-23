@@ -1,0 +1,13 @@
+version: 2
+
+build:
+  os: macOs 14.2 Beta (23C5041e)
+  tools:
+    python: "3.11"
+
+sphinx:
+  configuration:
+
+python:
+  install:
+    - requirements: requirements.txt
