@@ -6,15 +6,18 @@ orbs:
   python: circleci/python@2.0.3
 
 jobs:
-  test: # this can be any name you choose
-    executor: python/default # use the default executor defined within the orb
+  test:
+    executor: python/default
     steps:
-      - checkout # checkout source code
+      - checkout
       - python/install-packages:
           pkg-manager: pip
       - run:
           name: Run tests
-          command: python -m pytest --cov-config=.coveragerc --cov=lettings --cov=profiles --cov=oc_lettings_site --cov-fail-under=80
+          command: |
+            pip install --upgrade pip
+            python -m pytest --cov-config=.coveragerc --cov=lettings --cov=profiles --cov=oc_lettings_site --cov-fail-under=80
+
       - persist_to_workspace:
           root: ~/project
           paths:
