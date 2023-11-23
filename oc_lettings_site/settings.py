@@ -124,9 +124,9 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 SENTRY_DSN = config.get("SENTRY_DSN")
-if not DEBUG and "SENTRY_DSN" in os.environ:
+if not DEBUG:
     STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-    SENTRY_DSN = config.get("SENTRY_DSN")
+
 # Sentry config
 
 print("SENTRY : ", SENTRY_DSN)
