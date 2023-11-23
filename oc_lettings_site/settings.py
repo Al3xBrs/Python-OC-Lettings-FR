@@ -129,7 +129,7 @@ if not DEBUG:
 
 # Sentry config
 
-SENTRY_DSN = config.get("SENTRY_DSN")
+SENTRY_DSN = "$SENTRY_DSN"
 sentry_sdk.init(
     dsn=SENTRY_DSN,
     enable_tracing=True,
