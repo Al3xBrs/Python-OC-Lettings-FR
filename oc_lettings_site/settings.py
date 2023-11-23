@@ -129,6 +129,7 @@ if not DEBUG:
     SENTRY_DSN = os.getenv("SENTRY_DSN")
 # Sentry config
 
+print("SENTRY : ", SENTRY_DSN)
 
 sentry_sdk.init(
     dsn=SENTRY_DSN,
