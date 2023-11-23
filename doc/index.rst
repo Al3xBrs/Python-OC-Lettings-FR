@@ -20,16 +20,19 @@ Indices and tables
 * :ref:`Quick Start`
 
 
+.. _Description:
 Description
 ===========
 
 A test, *a test*, **a test**
 
+.. _Instruction:
 Instruction
 ===========
 
 A test, *a test*, **a test**
 
+.. _Quick Start:
 Quick Start
 ===========
 
