@@ -123,13 +123,13 @@ STATIC_URL = "/static/"
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
-
+SENTRY_DSN = config.get("SENTRY_DSN")
 if not DEBUG:
     STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-
+    SENTRY_DSN = "$SENTRY_DSN"
 # Sentry config
 
-SENTRY_DSN = "$SENTRY_DSN"
+
 sentry_sdk.init(
     dsn=SENTRY_DSN,
     enable_tracing=True,
