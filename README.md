@@ -75,3 +75,34 @@ Utilisation de PowerShell, comme ci-dessus sauf :
 
 - Pour activer l'environnement virtuel, `.\venv\Scripts\Activate.ps1` 
 - Remplacer `which <my-command>` par `(Get-Command <my-command>).Path`
+
+
+### Déploiement
+
+- Le déploiement est configuré de sorte qu'une image **Docker** est générée et déployée sur **Render** à chaque commit
+sur la branche **master** que lorsque les tests sont validés sur **circleci**.
+
+- Pour que le déploiement se déroule sans accroc, les tests doivent couvrir 80% du code et générer 
+une image **Docker** compatible avec le déploiement sur **Render**.
+
+- Il est également important de renseigner les variables d'environnement sur les différents sites.
+
+
+#### Déploiement manuel
+
+- Requirements : `pip install docker`
+- Pour un déploiement manuel, assurez vous de couvrir au moins 80% du code avec des tests en utilisant 
+pytest --cov par exemple.
+
+- Lancer la création de l'image Docker `docker build -t [nom-user-dockerhub]/[nom-de-l'img]:[tag] .`
+*Le fait de renseigner le nom de l'user DockerHub permettra un push plus simple sur DockerHub.*
+- Pour vous aider à maitriser la conteneurisation des images Docker, vous pouvez utiliser **Docker Desktop** 
+disponible ici : https://www.docker.com/products/docker-desktop/. Docker Desktop possède une interface
+graphique user friendly pour comprendre le déroulement de ces opérations.
+
+- Faire tourner l'image Docker créée à l'instant : `docker run [nom-user-dockerhub]/[nom-de-l'img]:[tag]`
+
+- Pour push l'image sur DockerHub : `docker push [nom-user-dockerhub]/[nom-de-l'img]:[tag]`
+
+
+
