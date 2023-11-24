@@ -158,6 +158,7 @@ If you have to commit any change, you have to check circleci status and be aware
 You can deploy a Docker Image on your machine using Docker Desktop. Docker Desktop has an user friendly interface that permits you to understand what is done.
 To install Docker Image, go to : `https://www.docker.com/products/docker-desktop/`.
 
+If you need to change your Sentry DSN, you can add a SENTRY_DNS variable in the Render .env file.
 
 .. _Deploy and gesture:
 Deploy and Gesture
