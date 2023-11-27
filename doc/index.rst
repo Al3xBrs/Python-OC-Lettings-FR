@@ -17,7 +17,7 @@ Indices and tables
 
 * :ref:`Description`
 * :ref:`Instruction`
-* :ref:`Quick Start`
+* :ref:`Quick Start - 2`
 * :ref:`Technologies and languages`
 * :ref:`Interfaces`
 * :ref:`How to use`

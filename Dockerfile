@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 python:3.11-alpine
+FROM python:3.11-alpine
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 COPY requirements.txt .
