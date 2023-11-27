@@ -129,7 +129,7 @@ if not DEBUG:
 
 # Sentry config
 
-print("SENTRY : ", SENTRY_DSN)
+# print("SENTRY : ", SENTRY_DSN)
 
 sentry_sdk.init(
     dsn=SENTRY_DSN,
