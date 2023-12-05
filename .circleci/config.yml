@@ -48,6 +48,7 @@ jobs:
             docker push al3xbrs/oc_lettings_site:latest
 
   deploy:
+    resource_class: medium+
     docker:
       - image: circleci/python:3.11-rc-browsers-legacy
 
